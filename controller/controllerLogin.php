@@ -20,7 +20,7 @@ if (!empty($_POST)) {
 
             if (password_verify($password,$fila['PASSWORD'])) {
                 
-                $_SESSION["USER"] = [$fila['ID_USER'],$fila['NAME']];
+                $_SESSION["USER"] = [$fila['ID_USER'],$fila['NAME'],$fila['FOTO']];
                 header("refresh:2;url=/index.php");
             }else{
                 echo '

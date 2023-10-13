@@ -16,7 +16,7 @@
             </form>
         </div>
         <div>
-           <span>PHOTO</span> <img src='https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Free-Download.png' width="50px" >
+           <span>PHOTO</span> <img src='<?php echo $fila['FOTO'] ? $fila['FOTO'] : "https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Free-Download.png" ?>' width="50px" >
         </div>
         <div>
             <span>NAME</span> <span><?php echo $fila['NAME'] ?></span>

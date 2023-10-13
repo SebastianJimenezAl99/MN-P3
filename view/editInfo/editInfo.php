@@ -11,10 +11,12 @@
         <h1>Change Info</h1>
         <p>Changes will be reflected to every services</p>
     </div>
-    <form action="../../controller/controllerEditInfo.php" method="post">
+    <form action="../../controller/controllerEditInfo.php" method="post" enctype="multipart/form-data">
+   
         <div>
-            <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Free-Download.png" width="50px">
+            <img src="<?php echo $fila['FOTO'] ? $fila['FOTO'] : "https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Free-Download.png" ?>" width="50px">
             <span>CHANGE PHOTO</span>
+            <input type="file" name="foto" id="foto">
         </div>
         <div>
             <label for="name">Name</label>
