@@ -22,29 +22,34 @@ if (isset($_POST["edit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" href="./img/devchallenges.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/f406e3edda.js" crossorigin="anonymous"></script>
     <title>Authentication App</title>
 </head>
 <body>
-    <?php 
-        if (isset($_SESSION["USER"])) {
-            include("./view/header.php");
-            if (isset($editar)) {
-                if ($editar) {
-                    include("./view/editInfo/editInfo.php");
+    <div class="Contenedor-prncipal">
+        <?php 
+            if (isset($_SESSION["USER"])) {
+                include("./view/header.php");
+                if (isset($editar)) {
+                    if ($editar) {
+                        include("./view/editInfo/editInfo.php");
+                    }else{
+                        include("./view/personalInfo/personalInfo.php"); 
+                    }   
                 }else{
                     include("./view/personalInfo/personalInfo.php"); 
-                }   
-            }else{
-                include("./view/personalInfo/personalInfo.php"); 
+                }
+                
+            } else {
+                if(isset($_GET['register'])){
+                    include("./view/registrar/registrar.php");
+                }else{
+                    include("./view/login/login.php");    
+                }
             }
-            
-        } else {
-            if(isset($_GET['register'])){
-                include("./view/registrar/registrar.php");
-            }else{
-                include("./view/login/login.php");    
-            }
-        }
-    ?>
+        ?>
+    </div>
+    
 </body>
 </html>
