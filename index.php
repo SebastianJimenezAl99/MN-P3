@@ -39,7 +39,11 @@ if (isset($_POST["edit"])) {
             }
             
         } else {
-            include("./view/login/login.php");
+            if(isset($_GET['register'])){
+                include("./view/registrar/registrar.php");
+            }else{
+                include("./view/login/login.php");    
+            }
         }
     ?>
 </body>

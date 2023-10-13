@@ -15,7 +15,7 @@
         <img src="../../img/Twitter.svg" alt="twiter">
         <img src="../../img/Gihub.svg" alt="Github">
     </div>
-    <p>Don't have an account yet? <a href="/view/registrar/registrar.php">Register</a></p>
+    <p>Don't have an account yet? <a href="/index.php?register=true">Register</a></p>
 </div>
 <div>
     <span>Created by username</span>
