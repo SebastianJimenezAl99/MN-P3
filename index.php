@@ -30,17 +30,18 @@ if (isset($_POST["edit"])) {
     <div class="Contenedor-prncipal">
         <?php 
             if (isset($_SESSION["USER"])) {
-                include("./view/header.php");
-                if (isset($editar)) {
-                    if ($editar) {
-                        include("./view/editInfo/editInfo.php");
+                echo "<div class='contenedor-principal-2'>";
+                    include("./view/header.php");
+                    if (isset($editar)) {
+                        if ($editar) {
+                            include("./view/editInfo/editInfo.php");
+                        }else{
+                            include("./view/personalInfo/personalInfo.php"); 
+                        }   
                     }else{
                         include("./view/personalInfo/personalInfo.php"); 
-                    }   
-                }else{
-                    include("./view/personalInfo/personalInfo.php"); 
-                }
-                
+                    }
+                echo "</div>";
             } else {
                 if(isset($_GET['register'])){
                     include("./view/registrar/registrar.php");
