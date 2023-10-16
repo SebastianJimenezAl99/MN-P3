@@ -31,14 +31,18 @@ if (isset($_POST["edit"])) {
         <?php 
             if (isset($_SESSION["USER"])) {
                 echo "<div class='contenedor-principal-2'>";
-                    include("./view/header.php");
+                    
                     if (isset($editar)) {
+                        
                         if ($editar) {
+                            include("./view/header.php");
                             include("./view/editInfo/editInfo.php");
                         }else{
+                            include("./view/header.php");
                             include("./view/personalInfo/personalInfo.php"); 
                         }   
                     }else{
+                        include("./view/header.php");
                         include("./view/personalInfo/personalInfo.php"); 
                     }
                 echo "</div>";

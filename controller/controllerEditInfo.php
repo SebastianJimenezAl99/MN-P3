@@ -44,9 +44,19 @@
         }
         
         $stmt->execute();
-        /* $resultado = $stmt->get_result();
+        
+        $sql = "SELECT * FROM users WHERE EMAIL = ?";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
-        $fila = $resultado->fetch_assoc(); */
+        if ($resultado->num_rows > 0) {
+            echo "CARGANDO... ";
+            $fila = $resultado->fetch_assoc();
+            $_SESSION["USER"] = [$fila['ID_USER'],$fila['NAME'],$fila['FOTO']];
+        }
+
         $stmt->close();
         $conexion->close();
 
